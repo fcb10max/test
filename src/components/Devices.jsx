@@ -11,6 +11,8 @@ const Wrapper = styled.div``;
 
 const Devices = ({device}) => {
 
+  window.scrollTo(0,0);
+
   return (
     <Container>
       <Wrapper>
