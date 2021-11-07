@@ -1,8 +1,20 @@
-import { faAndroid, faApple, faAppStoreIos, faTwitter, faWindows } from "@fortawesome/free-brands-svg-icons";
-import { faArrowRight, faBolt, faDesktop, faMapMarkerAlt, faTachometerAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAndroid,
+  faApple,
+  faAppStoreIos,
+  faTwitter,
+  faWindows,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faArrowRight,
+  faBolt,
+  faDesktop,
+  faMapMarkerAlt,
+  faTachometerAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
-import MainBlock from './FeaturesComponents/MainBlock';
+import MainBlock from "./FeaturesComponents/MainBlock";
 import NavbarNoImg from "./Navbars/NavbarNoImg";
 
 const Container = styled.div`
@@ -23,6 +35,7 @@ const GSNContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 
   i {
     font-size: 30px;
@@ -30,6 +43,11 @@ const GSNContainer = styled.div`
 
   h1 {
     margin: 20px 0;
+    max-width: 80vw;
+  }
+
+  p {
+    max-width: 80vw;
   }
 
   span {
@@ -43,21 +61,24 @@ const Countries = styled.div`
   display: flex;
   justify-content: center;
   padding: 100px 0;
+  flex-wrap: wrap;
 `;
 const CountryBlock = styled.div`
-  margin: 0 30px;
+  margin: 30px;
   text-align: center;
+  flex-basis: 110px;
 `;
 const Num = styled.h1``;
 const Name = styled.div`
   margin: 10px 0;
+  height: 50px;
+  width: 110px;
 `;
 const Flags = styled.div`
   display: flex;
   justify-content: center;
 `;
 const Flag = styled.div`
-
   :nth-child(2) {
     margin: 0 15px;
   }
@@ -72,9 +93,13 @@ const BottomBlock = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-const Title = styled.h1``;
+const Title = styled.h1`
+  max-width: 80vw;
+  text-align: center;
+  `;
 const Desc = styled.div`
-  padding: 0 350px;
+  margin: 20px 0;
+  max-width: 70vw;
   text-align: center;
 `;
 const Button = styled.div`
@@ -86,7 +111,6 @@ const Button = styled.div`
   font-weight: 600;
   transition: transform 0.3s linear;
   margin-top: 40px;
-
 
   span:first-child {
     margin-right: 5px;
@@ -112,9 +136,7 @@ const BottomText = styled.div`
   }
 `;
 
-
 const Locations = () => {
-
   const locationsArr = [
     {
       num: "34",
@@ -122,8 +144,8 @@ const Locations = () => {
       flags: [
         "https://ultravpn.com/assets/us.png",
         "https://ultravpn.com/assets/ca.png",
-        "https://ultravpn.com/assets/mx.png"
-      ]
+        "https://ultravpn.com/assets/mx.png",
+      ],
     },
     {
       num: "43",
@@ -131,8 +153,8 @@ const Locations = () => {
       flags: [
         "https://ultravpn.com/assets/gb.png",
         "https://ultravpn.com/assets/de.png",
-        "https://ultravpn.com/assets/fr.png"
-      ]
+        "https://ultravpn.com/assets/fr.png",
+      ],
     },
     {
       num: "26",
@@ -140,8 +162,8 @@ const Locations = () => {
       flags: [
         "https://ultravpn.com/assets/in.png",
         "https://ultravpn.com/assets/hk.png",
-        "https://ultravpn.com/assets/ph.png"
-      ]
+        "https://ultravpn.com/assets/ph.png",
+      ],
     },
     {
       num: "3",
@@ -149,8 +171,8 @@ const Locations = () => {
       flags: [
         "https://ultravpn.com/assets/za.png",
         "https://ultravpn.com/assets/tn.png",
-        "https://ultravpn.com/assets/globe.png"
-      ]
+        "https://ultravpn.com/assets/globe.png",
+      ],
     },
     {
       num: "8",
@@ -158,8 +180,8 @@ const Locations = () => {
       flags: [
         "https://ultravpn.com/assets/mx.png",
         "https://ultravpn.com/assets/co.png",
-        "https://ultravpn.com/assets/br.png"
-      ]
+        "https://ultravpn.com/assets/br.png",
+      ],
     },
     {
       num: "2",
@@ -167,35 +189,35 @@ const Locations = () => {
       flags: [
         "https://ultravpn.com/assets/au.png",
         "https://ultravpn.com/assets/globe.png",
-        "https://ultravpn.com/assets/nz.png"
-      ]
+        "https://ultravpn.com/assets/nz.png",
+      ],
     },
-  ]
+  ];
 
   const contentObj = [
-      {
-        title: "The Content You Want, When You Want It",
-        desc: "Stream video from any region at the click of a button.",
-        icon: <FontAwesomeIcon icon={faTachometerAlt} />
-      },
-      {
-        title: "Watch Your Favorite Team",
-        desc: "Access live streaming sports events from global broadcasters.",
-        icon: <FontAwesomeIcon icon={faDesktop} />
-      },
-      {
-        title: "Connect With Friends Online",
-        desc: "Enjoy all of your favorite social networks wherever you are.",
-        icon: <FontAwesomeIcon icon={faTwitter} />
-      },
-    ];
+    {
+      title: "The Content You Want, When You Want It",
+      desc: "Stream video from any region at the click of a button.",
+      icon: <FontAwesomeIcon icon={faTachometerAlt} />,
+    },
+    {
+      title: "Watch Your Favorite Team",
+      desc: "Access live streaming sports events from global broadcasters.",
+      icon: <FontAwesomeIcon icon={faDesktop} />,
+    },
+    {
+      title: "Connect With Friends Online",
+      desc: "Enjoy all of your favorite social networks wherever you are.",
+      icon: <FontAwesomeIcon icon={faTwitter} />,
+    },
+  ];
 
   return (
     <Container>
       <NavbarNoImg
-      img={"https://ultravpn.com/assets/hero-map-points.png"}
-      title={"100+ Superfast Servers"}
-      desc={"UltraVPN opens the door to a global network."}
+        img={"https://ultravpn.com/assets/hero-map-points.png"}
+        title={"100+ Superfast Servers"}
+        desc={"UltraVPN opens the door to a global network."}
       />
       <Wrapper>
         <GSNContainer>
@@ -216,15 +238,17 @@ const Locations = () => {
         </GSNContainer>
         <Countries>
           {locationsArr.map((item) => (
-          <CountryBlock>
-            <Num>{item.num}</Num>
-            <Name>{item.country}</Name>
-            <Flags>
-              {item.flags.map((item)=>(
-                <Flag><img src={item} alt="" /></Flag>
-              ))}
-            </Flags>
-          </CountryBlock>
+            <CountryBlock>
+              <Num>{item.num}</Num>
+              <Name>{item.country}</Name>
+              <Flags>
+                {item.flags.map((item) => (
+                  <Flag>
+                    <img src={item} alt="" />
+                  </Flag>
+                ))}
+              </Flags>
+            </CountryBlock>
           ))}
         </Countries>
         <MainBlock
@@ -250,10 +274,18 @@ const Locations = () => {
           <BottomText>
             <span>Available for</span>
             <span>
-              <i><FontAwesomeIcon icon={faWindows} /></i>
-              <i><FontAwesomeIcon icon={faAppStoreIos} /></i>
-              <i><FontAwesomeIcon icon={faAndroid} /></i>
-              <i><FontAwesomeIcon icon={faApple} /></i>
+              <i>
+                <FontAwesomeIcon icon={faWindows} />
+              </i>
+              <i>
+                <FontAwesomeIcon icon={faAppStoreIos} />
+              </i>
+              <i>
+                <FontAwesomeIcon icon={faAndroid} />
+              </i>
+              <i>
+                <FontAwesomeIcon icon={faApple} />
+              </i>
             </span>
           </BottomText>
         </BottomBlock>

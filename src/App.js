@@ -5,15 +5,19 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Locations from "./components/Locations";
 import Login from "./components/Login";
-import Navbar from "./components/Navbars/Navbar";
-import NavbarNoImg from "./components/Navbars/NavbarNoImg";
 import Pricing from "./components/Pricing";
 import Sports from "./components/Sports";
 import UsesComponent from "./components/UsesComponent";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import devices from "./components/DevicesComponents/devices";
+import { useState } from "react";
+import styled from "styled-components";
 
 function App() {
+
+  const [device, setDevice] = useState(devices.windows);
+
   return (
     <BrowserRouter>
       <Routes>
@@ -21,12 +25,13 @@ function App() {
         <Route path="/features" element={<Features />}/>
         <Route path="/location" element={<Locations />}/>
         <Route path="/pricing" element={<Pricing />}/>
-        <Route path="/devices" element={<Devices />}/>
+        <Route path="/devices" element={<Devices device={device} />}/>
         <Route path="/articles" element={<Articles />}/>
         <Route path="/top5uses" element={<UsesComponent />}/>
         <Route path="/sport" element={<Sports />}/>
+        <Route path="/login" element={<Login />}/>
       </Routes>
-      <Footer/>
+      <Footer devices={devices} setDevice={setDevice}/>
     </BrowserRouter>
   );
 }

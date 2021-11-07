@@ -23,12 +23,17 @@ const Wrapper = styled.div`
 const Icon = styled.h1`
   text-align: center;
 `;
-const Title = styled.h1`
-  text-align: center;
-  margin: 20px 0;
-`;
 const Block = styled.div`
   margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const Title = styled.h1`
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  max-width: 80vw;
 `;
 const StreamBlock = styled.div`
   display: flex;
@@ -41,6 +46,8 @@ const Desc = styled.p`
   font-size: 18px;
   margin: 20px 0;
   color: gray;
+  max-width: 80vw;
+  min-width: 300px;
 `;
 const Items = styled.div`
   width: 100%;
@@ -102,16 +109,23 @@ const MiddleIcon = styled.div`
 `;
 const MiddleTitle = styled.h1`
   margin: 20px 0;
+  text-align: center;
 `;
 const MiddleBlock = styled.div`
-  width: 60%;
+  max-width: 70vw;
+  width: 100%;
   display: grid;
   grid-template: 1fr 1fr / 1fr 1fr;
   grid-row-gap: 20px;
   margin: 40px 0;
-`;
+  
+  @media (max-width:1000px) {
+    grid-template: 1fr / auto;
+  }
+  `;
 const Item = styled.div`
-  display: flex;
+display: flex;
+min-width: 300px;
 
   i {
     display: flex;
@@ -128,31 +142,32 @@ const BlockTitle = styled.h3`
 const BlockDesc = styled.div`
   font-size: 16px;
   width: 80%;
-`
+`;
 
 const Sports = () => {
+  window.scrollTo(0, 0);
 
   const gridObjs = [
     {
       icon: <FontAwesomeIcon icon={faTwitter} />,
       title: "Access the entire web",
-      desc: "Get around content blocks and geo-restrictions to see the entire web."
+      desc: "Get around content blocks and geo-restrictions to see the entire web.",
     },
     {
       icon: <FontAwesomeIcon icon={faDesktop} />,
       title: "Stream Netflix",
-      desc: "Switch locations quickly using the UltraVPN browser add-on."
+      desc: "Switch locations quickly using the UltraVPN browser add-on.",
     },
     {
       icon: <FontAwesomeIcon icon={faTachometerAlt} />,
       title: "Browse Fast",
-      desc: "Enjoy great speeds from 55 global servers in our network."
+      desc: "Enjoy great speeds from 55 global servers in our network.",
     },
     {
       icon: <FontAwesomeIcon icon={faSignal} />,
       title: "No Caps - Ever",
-      desc: "We won’t cap or throttle your connection."
-    }
+      desc: "We won’t cap or throttle your connection.",
+    },
   ];
 
   return (
@@ -252,7 +267,7 @@ const Sports = () => {
             ))}
           </MiddleBlock>
         </MiddleWrapper>
-        <WhyChooseComponent/>
+        <WhyChooseComponent />
       </Wrapper>
     </Container>
   );

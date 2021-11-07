@@ -5,33 +5,32 @@ import TopBlock from "./HomeComponents/TopBlock";
 import Navbar from "./Navbars/Navbar";
 
 const Home = () => {
-
   // const [pos, setpos] = useState(100);
 
   // const handleScroll = (e) => {
   //   const blockArr = document.getElementsByClassName("animate");
-    
+
   // }
 
   // window.addEventListener("scroll", handleScroll);
 
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <TopBlock />
       <ImgTextBlock
         intro="DON’T COMPROMISE:"
         title="Fast and Unlimited VPN Access"
         desc="We’re proud of the speed of our servers. Stream live events without waiting for your download to catch up."
         image="https://ultravpn.com/assets/home-netflix.png"
-        />
+      />
       <ImgTextBlock
         reversed={true}
         intro="PROTECTION AND SECURITY"
         title="Our Encryption is Virtually Uncrackable"
         desc="In the war against hacking and snooping, you need an extra layer of security. With UltraVPN, your ISP can't log your activity or sell your browsing data when you use our encrypted tunnel to go online. We hand the control back to you."
         image="https://ultravpn.com/assets/home-encryption.png"
-        />
+      />
       <ImgTextBlock
         intro="BROWSE WITHOUT LIMITS:"
         title="Your VPN is Unlimited and Unrestricted"

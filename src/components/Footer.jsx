@@ -1,4 +1,6 @@
-import styled from "styled-components"
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const Container = styled.div`
   width: 100vw;
@@ -7,16 +9,21 @@ const Container = styled.div`
   background-color: #101010;
   color: white;
   padding: 30px 0;
-  `;
+`;
 const Wrapper = styled.div`
   max-width: 1440px;
   width: 100vw;
   display: flex;
   margin: 0 20px;
+
+  @media (max-width: 1100px) {
+    flex-wrap: wrap;
+  }
 `;
 const Block = styled.div`
   flex: 1;
-  padding-right: 20px;
+  margin: 20px;
+  min-width: 200px;
 `;
 const Logo = styled.div``;
 const Copyright = styled.div``;
@@ -24,14 +31,16 @@ const Title = styled.div``;
 const Content = styled.div``;
 const Item = styled.div`
   color: gray;
-  
+
   :hover {
     cursor: pointer;
     text-decoration: underline;
   }
 `;
 
-const Footer = () => {
+const Footer = ({ devices, setDevice }) => {
+  window.scrollTo(0, 0);
+
   return (
     <Container>
       <Wrapper>
@@ -42,20 +51,52 @@ const Footer = () => {
         <Block>
           <Title>Product</Title>
           <Content>
-            <Item>VPN for Windows</Item>
-            <Item>VPN for Mac</Item>
-            <Item>VPN for iOS</Item>
-            <Item>VPN for Android</Item>
+            <Link
+              style={{ textDecoration: "none" }}
+              to="/devices"
+              onClick={() => setDevice(devices.windows)}
+            >
+              <Item>VPN for Windows</Item>
+            </Link>
+            <Link
+              style={{ textDecoration: "none" }}
+              to="/devices"
+              onClick={() => setDevice(devices.macOS)}
+            >
+              <Item>VPN for Mac</Item>
+            </Link>
+            <Link
+              style={{ textDecoration: "none" }}
+              to="/devices"
+              onClick={() => setDevice(devices.iOS)}
+            >
+              <Item>VPN for iOS</Item>
+            </Link>
+            <Link
+              style={{ textDecoration: "none" }}
+              to="/devices"
+              onClick={() => setDevice(devices.Android)}
+            >
+              <Item>VPN for Android</Item>
+            </Link>
           </Content>
         </Block>
         <Block>
           <Title>Explore</Title>
           <Content>
-            <Item>What is a VPN</Item>
-            <Item>Top 5 VPN Uses</Item>
-            <Item>Stream Sports</Item>
+            <Link to="/articles" style={{ textDecoration: "none" }}>
+              <Item>What is a VPN</Item>
+            </Link>
+            <Link to="/top5uses" style={{ textDecoration: "none" }}>
+              <Item>Top 5 VPN Uses</Item>
+            </Link>
+            <Link to="/sport" style={{ textDecoration: "none" }}>
+              <Item>Stream Sports</Item>
+            </Link>
             <Item>Stream Live Events</Item>
-            <Item>Log In</Item>
+            <Link to="/login" style={{ textDecoration: "none" }}>
+              <Item>Log In</Item>
+            </Link>
             <Item>Download Now</Item>
           </Content>
         </Block>
@@ -76,7 +117,7 @@ const Footer = () => {
         </Block>
       </Wrapper>
     </Container>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

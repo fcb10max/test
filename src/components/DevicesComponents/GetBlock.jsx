@@ -1,4 +1,8 @@
-import { faArrowRight, faCheckCircle, faDesktop } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faCheckCircle,
+  faDesktop,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
@@ -15,34 +19,47 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-const Title = styled.div``;
-const Desc = styled.div``;
+const Title = styled.div`
+  text-align: center;
+  max-width: 80vw;
+`;
+const Desc = styled.div`
+  text-align: center;
+  max-width: 80vw;
+`;
 const Block = styled.div`
   max-width: 80%;
   width: 100vw;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 const Left = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 `;
 const Item = styled.div`
   margin: 40px;
   display: flex;
+  min-width: 300px;
 `;
 const LeftIcon = styled.div`
   width: 30px;
   margin-right: 15px;
   font-size: 24px;
 `;
-const LeftText = styled.div``;
+const LeftText = styled.div`
+  max-width: 350px;
+`;
 const LeftTitle = styled.h2``;
 const LeftDesc = styled.div`
-  max-width: 70%;
+  max-width: 70vw;
   font-weight: 400;
   color: gray;
 `;
@@ -53,7 +70,8 @@ const Img = styled.div`
   display: flex;
   justify-content: flex-start;
   img {
-    width: 100%;
+    max-width: 50vw;
+    min-width: 300px;
   }
 `;
 const Button = styled.div`
@@ -93,9 +111,7 @@ const GetBlock = ({ title, desc, item1, item2, img }) => {
               </LeftIcon>
               <LeftText>
                 <LeftTitle>{item1.title}</LeftTitle>
-                <LeftDesc>
-                  {item1.desc}
-                </LeftDesc>
+                <LeftDesc>{item1.desc}</LeftDesc>
               </LeftText>
             </Item>
             <Item>
@@ -104,9 +120,7 @@ const GetBlock = ({ title, desc, item1, item2, img }) => {
               </LeftIcon>
               <LeftText>
                 <LeftTitle>{item2.title}</LeftTitle>
-                <LeftDesc>
-                  {item2.desc}
-                </LeftDesc>
+                <LeftDesc>{item2.desc}</LeftDesc>
               </LeftText>
             </Item>
           </Left>
@@ -116,7 +130,7 @@ const GetBlock = ({ title, desc, item1, item2, img }) => {
             </Img>
           </Right>
         </Block>
-          <Button>
+        <Button>
           <span>Register Now</span>
           <span>
             <FontAwesomeIcon icon={faArrowRight} />

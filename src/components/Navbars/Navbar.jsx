@@ -1,7 +1,19 @@
-import { faAndroid, faApple, faAppStore, faAppStoreIos, faWindows } from "@fortawesome/free-brands-svg-icons";
-import { faArrowRight, faLock } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAndroid,
+  faApple,
+  faAppStore,
+  faWindows,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faArrowRight,
+  faBars,
+  faLock,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import BigMenu from "./NavbarComponents/BigMenu";
 
 const Container = styled.div`
   background-image: url("https://ultravpn.com/assets/hero-globe.png");
@@ -12,12 +24,13 @@ const Container = styled.div`
   justify-content: center;
   color: white;
   overflow-x: hidden;
-`;
+  background-color: black;
+  `;
 const Wrapper = styled.div`
   max-width: 1440px;
   width: 100vw;
   margin: 0 10px;
-`;
+  `;
 const LogoAndMenuContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -27,8 +40,23 @@ const Logo = styled.div``;
 const Menu = styled.div``;
 const ShortMenu = styled.div`
   display: none;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  @media (max-width: 900px) {
+    display: flex;
+  }
 `;
-const LongMenu = styled.div``;
+const LongMenu = styled.div`
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
 const LongMenuItems = styled.div`
   display: flex;
   justify-content: space-between;
@@ -50,9 +78,9 @@ const LoginButton = styled.div`
   transition: all 0.3s linear;
 
   span:first-child {
-    margin-right: 10px
+    margin-right: 10px;
   }
-  
+
   :hover {
     color: black;
     background-color: white;
@@ -102,29 +130,54 @@ const RegisterButton = styled.div`
 const BottomText = styled.div`
   color: gray;
   display: flex;
-  
-  h3, span {
+
+  h3,
+  span {
     margin-right: 15px;
     font-size: 24px;
   }
 `;
 
-const Navbar = ({ bigText, smallText, bgImg }) => {
+const Navbar = () => {
+
+  const [bigMenuActive, setBigMenuActive] = useState(false);
+
+
   return (
-    <Container>
+    <Container active={bigMenuActive}>
+      {/* <BigMenu active={bigMenuActive} /> */}
       <Wrapper>
         <LogoAndMenuContainer>
-          <Logo>Logo</Logo>
+          <Link style={{ textDecoration: "none", cursor: "pointer" }} to="/">
+            <Logo>Logo</Logo>
+          </Link>
           <Menu>
-            <ShortMenu></ShortMenu>
+            <ShortMenu onClick={() => setBigMenuActive(true)}>
+              <FontAwesomeIcon icon={faBars} />
+            </ShortMenu>
             <LongMenu>
               <LongMenuItems>
                 <LongMenuItem>USA</LongMenuItem>
-                <LongMenuItem>Features</LongMenuItem>
-                <LongMenuItem>Locations</LongMenuItem>
-                <LongMenuItem>Pricing</LongMenuItem>
-                <LongMenuItem>Support</LongMenuItem>
-                <LoginButton><span><FontAwesomeIcon icon={faLock} /></span><span>Log in</span></LoginButton>
+                <Link style={{ textDecoration: "none", color: "white" }} to="/features">
+                  <LongMenuItem>Features</LongMenuItem>
+                </Link>
+                <Link style={{ textDecoration: "none", color: "white" }} to="/location">
+                  <LongMenuItem>Locations</LongMenuItem>
+                </Link>
+                <Link style={{ textDecoration: "none", color: "white" }} to="/pricing">
+                  <LongMenuItem>Pricing</LongMenuItem>
+                </Link>
+                <Link style={{ textDecoration: "none", color: "white" }} to="/">
+                  <LongMenuItem>Support</LongMenuItem>
+                </Link>
+                <Link style={{ textDecoration: "none", color: "white" }} to="/login">
+                  <LoginButton>
+                    <span>
+                      <FontAwesomeIcon icon={faLock} />
+                    </span>
+                    <span>Log in</span>
+                  </LoginButton>
+                </Link>
               </LongMenuItems>
             </LongMenu>
           </Menu>
@@ -132,11 +185,19 @@ const Navbar = ({ bigText, smallText, bgImg }) => {
         <TextContainer>
           <BigText>The Internet, Unlocked</BigText>
           <SmallText>
-          One VPN allows you to access the whole web, privately and securely.
+            One VPN allows you to access the whole web, privately and securely.
           </SmallText>
           <ImgBtnContainer>
-            <img src="https://ultravpn.com/assets/ultra-vpn-apple-devices.png" alt="" />
-            <RegisterButton><span>Register Now</span><span><FontAwesomeIcon icon={faArrowRight} /></span></RegisterButton>
+            <img
+              src="https://ultravpn.com/assets/ultra-vpn-apple-devices.png"
+              alt=""
+            />
+            <RegisterButton>
+              <span>Register Now</span>
+              <span>
+                <FontAwesomeIcon icon={faArrowRight} />
+              </span>
+            </RegisterButton>
             <BottomText>
               <h3>Available for</h3>
               <span>

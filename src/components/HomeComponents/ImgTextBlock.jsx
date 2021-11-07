@@ -22,13 +22,23 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: ${(props) => (props.reversed ? "row-reverse" : "row")};
   padding: 80px 10px;
-  max-height: fit-content;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+
 `;
 const Left = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
   padding-left: 20px;
+  
+  @media (max-width:900px) {
+    padding: 0;
+    align-items: center;
+    text-align: center;
+  }
 `;
 const Right = styled.div`
   flex: 1;
@@ -39,9 +49,17 @@ const Intro = styled.p``;
 const Title = styled.h1`
   margin: 20px 0;
   width: 60%;
-`;
+  @media (max-width: 800px) {
+    width: 100%;
+    max-width: 80vw;
+  }
+  `;
 const Desc = styled.div`
   width: 70%;
+  @media (max-width: 800px) {
+    width: 100%;
+    max-width: 80vw;
+  }
 `;
 const Img = styled.div`
   img {
@@ -54,7 +72,7 @@ const ImgTextBlock = ({ reversed, intro, title, desc, image }) => {
 
   return (
     <Container className={!reversed ? "animate" : ""}>
-      <Bg active={!reversed}></Bg>
+      {/* <Bg active={!reversed}></Bg> */}
       <Wrapper reversed={reversed}>
         <Left>
           <Intro>{intro}</Intro>

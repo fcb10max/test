@@ -20,11 +20,14 @@ const BottomContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 `;
 const Title = styled.h1`
   font-size: 30px;
+  max-width: 80vw;
 `;
 const Desc = styled.div`
+  min-width: 300px;
   text-align: center;
   width: 40%;
   margin: 20px 0;
@@ -54,6 +57,9 @@ const RegisterButton = styled.div`
 `;
 
 const UsesComponent = () => {
+
+  window.scrollTo(0,0);
+
   return (
     <Container>
       <Wrapper>

@@ -5,6 +5,7 @@ import styled from "styled-components";
 const Container = styled.div`
   flex: 1;
   margin: 0 20px;
+  padding: 0 20px;
   border-radius: 16px;
   border: ${(props) => props.diff ? "4px solid #ff8600" : "2px solid grey"};
   display: flex;
@@ -13,9 +14,16 @@ const Container = styled.div`
   justify-content: center;
   position: relative;
   text-align: center;
-  max-width: 300px;
+  width: 250px;
   height: 400px;
+  overflow: hidden;
+  max-width: 250px;
   ${(props) => props.diff ? "transform: scale(1.1);" : ""}
+
+  @media (max-width: 1000px) {
+    margin: 50px;
+    padding: 20px;
+  }
 `;
 const Discount = styled.div`
   width: 40%;

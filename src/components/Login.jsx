@@ -5,6 +5,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -22,6 +23,7 @@ const Logo = styled.div`
   height: 34px;
   margin: 34px auto;
   color: white;
+  cursor: pointer;
 `;
 const MainBlock = styled.div`
   margin: 88px 0;
@@ -150,6 +152,9 @@ const BottomBlock = styled.div`
 `;
 
 const Login = () => {
+
+  window.scrollTo(0,0);
+
   const [passType, setPassType] = useState("password");
   const [eyeType, setEyeType] = useState(<FontAwesomeIcon icon={faEyeSlash} />);
   const [email, setEmail] = useState("");
@@ -167,7 +172,9 @@ const Login = () => {
 
   return (
     <Container>
-      <Logo>Logo</Logo>
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <Logo>Logo</Logo>
+      </Link>
       <MainBlock>
         <Top>
           <Title>Welcome Back!</Title>

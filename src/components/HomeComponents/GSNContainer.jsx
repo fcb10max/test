@@ -1,4 +1,7 @@
-import { faArrowRight, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faMapMarkerAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
@@ -17,6 +20,21 @@ const Wrapper = styled.div`
 
   h1 {
     margin: 20px 0;
+    text-align: center;
+
+    @media (max-width: 600px) {
+      max-width: 300px;
+    }
+  }
+
+  p {
+    color: gray;
+    font-size: 16px;
+    text-align: center;
+
+    @media (max-width: 800px) {
+      max-width: 300px;
+    }
   }
 
   span {
@@ -35,11 +53,21 @@ const BottomContainer = styled.div`
 `;
 const Title = styled.h1`
   font-size: 30px;
+  text-align: center;
+
+  @media (max-width: 600px) {
+    max-width: 300px;
+  }
 `;
 const Desc = styled.div`
   margin: 20px 0;
   font-size: 18px;
   color: gray;
+  text-align: center;
+
+  @media (max-width: 800px) {
+    max-width: 300px;
+  }
 `;
 
 const RegisterButton = styled.div`
@@ -71,10 +99,10 @@ const GSNContainer = () => {
           <FontAwesomeIcon icon={faMapMarkerAlt} />
         </i>
         <h1>Global Server Network</h1>
-        <span>
+        <p>
           We give you the choice of more than 100 server locations every time
           you connect.
-        </span>
+        </p>
         <span>
           <img
             src="https://ultravpn.com/assets/global-network-map.png"

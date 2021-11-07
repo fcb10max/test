@@ -20,12 +20,18 @@ const Wrapper = styled.div`
   text-align: center;
 `;
 const WhyChoose = styled.div``;
-const Title = styled.h1``;
+const Title = styled.h1`
+  max-width: 80vw;
+`;
 const WhyChooseWrapper = styled.div`
   margin: 40px 0;
   display: grid;
   grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
   grid-gap: 10px 20px;
+
+  @media (max-width: 1000px) {
+    grid-template: auto / 1fr;
+  }
 `;
 const WhyChooseItem = styled.div`
   display: flex;

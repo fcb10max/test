@@ -7,6 +7,9 @@ const Container = styled.div``;
 const Wrapper = styled.div``;
 
 const Articles = () => {
+
+  window.scrollTo(0,0);
+
   return (
     <Container>
       <Wrapper>

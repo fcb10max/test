@@ -8,6 +8,10 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   margin: 40px 20px;
+
+  @media (max-width: 800px) {
+    margin: 40px 0;
+  }
 `;
 const Wrapper = styled.div`
   text-align: center;
@@ -18,6 +22,11 @@ const Icon = styled.h1``;
 const Title = styled.h1``;
 const Block = styled.div`
   display: flex;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 const Item = styled.div`
   flex: 1;
@@ -25,12 +34,14 @@ const Item = styled.div`
 `;
 const Img = styled.div`
   img {
-    max-width: 300px;
+    min-width: 300px;
     width: 20vw;
   }
 `;
 const Text = styled.h2``;
 const Desc = styled.div`
+  max-width: 60vw;
+  min-width: 300px;
   font-size: 20px;
   color: gray;
 `;

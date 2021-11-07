@@ -35,11 +35,19 @@ const BottomBlock = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-const Title = styled.h1``;
+const Title = styled.h1`
+  text-align: center;
+  max-width: 80vw;
+  `;
 const Desc = styled.div`
   width: 50%;
   text-align: center;
   margin: 20px 0;
+
+  @media (max-width:600px) {
+    width: 100%;
+    max-width: 80vw;
+  }
 `;
 const Button = styled.div`
   padding: 10px 24px;

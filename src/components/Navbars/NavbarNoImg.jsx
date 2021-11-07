@@ -1,5 +1,6 @@
-import { faArrowRight, faLock } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faBars, faLock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -11,6 +12,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   color: white;
+  background-color: black;
 `;
 const Wrapper = styled.div`
   max-width: 1440px;
@@ -25,8 +27,23 @@ const Logo = styled.div``;
 const Menu = styled.div``;
 const ShortMenu = styled.div`
   display: none;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  @media (max-width: 900px) {
+    display: flex;
+  }
 `;
-const LongMenu = styled.div``;
+const LongMenu = styled.div`
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
 const LongMenuItems = styled.div`
   display: flex;
   justify-content: space-between;
@@ -48,9 +65,9 @@ const LoginButton = styled.div`
   transition: all 0.3s linear;
 
   span:first-child {
-    margin-right: 10px
+    margin-right: 10px;
   }
-  
+
   :hover {
     color: black;
     background-color: white;
@@ -66,6 +83,7 @@ const BigText = styled.div`
   margin-bottom: 16px;
   font-size: 40px;
   font-weight: 700;
+  text-align: center;
 `;
 const SmallText = styled.div`
   margin-bottom: 32px;
@@ -105,28 +123,50 @@ const NavbarNoImg = ({ img, title, desc }) => {
     <Container img={img}>
       <Wrapper>
         <LogoAndMenuContainer>
-          <Logo>Logo</Logo>
+          <Link style={{ textDecoration: "none", cursor: "pointer" }} to="/">
+            <Logo>Logo</Logo>
+          </Link>
           <Menu>
-            <ShortMenu></ShortMenu>
+            <ShortMenu>
+              <FontAwesomeIcon icon={faBars} />
+            </ShortMenu>
             <LongMenu>
               <LongMenuItems>
                 <LongMenuItem>USA</LongMenuItem>
-                <LongMenuItem>Features</LongMenuItem>
-                <LongMenuItem>Locations</LongMenuItem>
-                <LongMenuItem>Pricing</LongMenuItem>
-                <LongMenuItem>Support</LongMenuItem>
-                <LoginButton><span><FontAwesomeIcon icon={faLock} /></span><span>Log in</span></LoginButton>
+                <Link style={{ textDecoration: "none", color: "white" }} to="/features">
+                  <LongMenuItem>Features</LongMenuItem>
+                </Link>
+                <Link style={{ textDecoration: "none", color: "white" }} to="/location">
+                  <LongMenuItem>Locations</LongMenuItem>
+                </Link>
+                <Link style={{ textDecoration: "none", color: "white" }} to="/pricing">
+                  <LongMenuItem>Pricing</LongMenuItem>
+                </Link>
+                <Link style={{ textDecoration: "none", color: "white" }} to="/">
+                  <LongMenuItem>Support</LongMenuItem>
+                </Link>
+                <Link style={{ textDecoration: "none", color: "white" }} to="/login">
+                  <LoginButton>
+                    <span>
+                      <FontAwesomeIcon icon={faLock} />
+                    </span>
+                    <span>Log in</span>
+                  </LoginButton>
+                </Link>
               </LongMenuItems>
             </LongMenu>
           </Menu>
         </LogoAndMenuContainer>
         <TextContainer>
           <BigText>{title}</BigText>
-          <SmallText>
-          {desc}
-          </SmallText>
+          <SmallText>{desc}</SmallText>
           <BtnContainer>
-            <RegisterButton><span>Register Now</span><span><FontAwesomeIcon icon={faArrowRight} /></span></RegisterButton>
+            <RegisterButton>
+              <span>Register Now</span>
+              <span>
+                <FontAwesomeIcon icon={faArrowRight} />
+              </span>
+            </RegisterButton>
           </BtnContainer>
         </TextContainer>
       </Wrapper>

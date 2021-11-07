@@ -10,17 +10,31 @@ const Icon = styled.div`
 const Title = styled.h1`
   font-size: 35px;
   margin: 20px 0;
-`;
+  max-width: 90vw;
+  text-align: center;
+  `;
 const Desc = styled.div`
   font-size: 20px;
+  max-width: 80vw;
+  text-align: center;
 `;
 const Block = styled.div`
   display: flex;
   align-items: center;
   flex-direction: ${(props) => props.reversed ? "row-reverse" : "row"};
   margin: 80px 0;
+
+  @media (max-width:1000px) {
+    flex-direction: column;
+  }
 `;
-const Left = styled.div``;
+const Left = styled.div`
+  width: 100%;
+
+  img {
+    max-width: 90vw;
+  }
+`;
 const Right = styled.div``;
 const Items = styled.div``;
 const Item = styled.div`
@@ -35,8 +49,12 @@ const ItemIcon = styled.div`
 const TextContainer = styled.div`
   text-align: start;
 `;
-const TextTitle = styled.h3``;
-const TextDesc = styled.div``;
+const TextTitle = styled.h3`
+  max-width: 70vw;
+`;
+const TextDesc = styled.div`
+  max-width: 70vw;
+`;
 
 const MainBlock = ({
   reversed,

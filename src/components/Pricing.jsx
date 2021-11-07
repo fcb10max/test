@@ -30,8 +30,16 @@ const Wrapper = styled.div`
 const Top = styled.div`
   display: flex;
   align-items: center;
-  width: 75%;
-  height: 500px;
+  justify-content: center;
+  width: 75vw;
+
+  margin: 50px 0 100px;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 0;
+  }
 `;
 
 const Middle = styled.div`
@@ -51,19 +59,36 @@ const MiddleIcon = styled.div`
 `;
 const MiddleTitle = styled.h1`
   margin: 20px 0;
+  text-align: center;
+  width: 80vw;
 `;
 const MiddleDesc = styled.div`
   color: gray;
+  text-align: center;
+  width: 80vw;
 `;
 const MiddleBlock = styled.div`
-  width: 60%;
+  max-width: 1440px;
+  width: 70%;
   display: grid;
   grid-template: 1fr 1fr 1fr / 1fr 1fr;
   grid-row-gap: 20px;
   margin: 40px 0;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
 `;
 const Item = styled.div`
   display: flex;
+  width: 70%;
+  margin: 20px;
+
+  @media (max-width: 800px) {
+    justify-content: flex-start;
+    width: 90vw;
+  }
 
   i {
     display: flex;
@@ -76,10 +101,12 @@ const Item = styled.div`
 const BlockText = styled.div``;
 const BlockTitle = styled.h3`
   font-size: 20px;
-`;
+  max-width: 70vw;
+  `;
 const BlockDesc = styled.div`
   font-size: 16px;
-`;
+  max-width: 70vw;
+  `;
 const Bottom = styled.div`
   display: flex;
   justify-content: center;
@@ -95,8 +122,13 @@ const BottomIcon = styled.div`
 `;
 const BottomTitle = styled.h1`
   margin: 20px 0;
+  max-width: 80vw;
+  text-align: center;
 `;
-const BottomDesc = styled.div``;
+const BottomDesc = styled.div`
+  max-width: 80vw;
+  text-align: center;
+`;
 const Table = styled.div`
   width: 100%;
 `;
@@ -105,7 +137,7 @@ const PremiumText = styled.div`
   position: relative;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   height: 20px;
 
   p {
