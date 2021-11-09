@@ -1,4 +1,9 @@
-import { faAndroid, faApple, faAppStoreIos, faWindows } from "@fortawesome/free-brands-svg-icons";
+import {
+  faAndroid,
+  faApple,
+  faAppStoreIos,
+  faWindows,
+} from "@fortawesome/free-brands-svg-icons";
 import {
   faArrowRight,
   faBolt,
@@ -10,6 +15,7 @@ import {
   faTachometerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import WhyInstall from "./DevicesComponents/WhyInstall";
 import MainBlock from "./FeaturesComponents/MainBlock";
@@ -36,13 +42,13 @@ const BottomBlock = styled.div`
 const Title = styled.h1`
   text-align: center;
   max-width: 80vw;
-  `;
+`;
 const Desc = styled.div`
   width: 50%;
   text-align: center;
   margin: 20px 0;
 
-  @media (max-width:600px) {
+  @media (max-width: 600px) {
     width: 100%;
     max-width: 80vw;
   }
@@ -80,10 +86,8 @@ const BottomText = styled.div`
   }
 `;
 
-
 const DownloadNow = () => {
-
-  window.scrollTo(0,0);
+  window.scrollTo(0, 0);
 
   const topBlockArr = [
     {
@@ -151,12 +155,14 @@ const DownloadNow = () => {
             the easiest way to secure your browsing, enhance your privacy, and
             unlock the parts of the web you've been missing.
           </Desc>
-          <Button>
-            <span>Register Now</span>
-            <span>
-              <FontAwesomeIcon icon={faArrowRight} />
-            </span>
-          </Button>
+          <Link to="/payment" style={{ textDecoration: "none" }}>
+            <Button>
+              <span>Register Now</span>
+              <span>
+                <FontAwesomeIcon icon={faArrowRight} />
+              </span>
+            </Button>
+          </Link>
           <BottomText>
             <span>Available for</span>
             <span>

@@ -4,6 +4,7 @@ import {
   faDesktop,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -130,12 +131,14 @@ const GetBlock = ({ title, desc, item1, item2, img }) => {
             </Img>
           </Right>
         </Block>
+        <Link to="/payment" style={{textDecoration:"none"}}>
         <Button>
           <span>Register Now</span>
           <span>
             <FontAwesomeIcon icon={faArrowRight} />
           </span>
         </Button>
+        </Link>
       </Wrapper>
     </Container>
   );

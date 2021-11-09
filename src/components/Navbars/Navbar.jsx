@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -99,12 +100,14 @@ const Navbar = () => {
               src="https://ultravpn.com/assets/ultra-vpn-apple-devices.png"
               alt=""
             />
+            <Link to="/payment" style={{textDecoration:"none"}}>
             <RegisterButton>
               <span>Register Now</span>
               <span>
                 <FontAwesomeIcon icon={faArrowRight} />
               </span>
             </RegisterButton>
+            </Link>
             <BottomText>
               <h3>Available for</h3>
               <span>

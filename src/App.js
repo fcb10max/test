@@ -19,6 +19,7 @@ import Streams from "./components/Stream";
 import DownloadNow from "./components/DownloadNow";
 import Support from "./components/Support";
 import Categories from "./components/SupportComponents/Categories";
+import Payment from "./components/Payment";
 
 function App() {
   const [device, setDevice] = useState(devices.windows);
@@ -31,7 +32,7 @@ function App() {
     position: ${(props) => (props.fixed ? "fixed" : "static")};
   `;
 
-  const urls = ["/login", "/support", "/categories"];
+  const urls = ["/login", "/support", "/categories", "/payment"];
 
   return (
     <Container fixed={dispFixed}>
@@ -61,6 +62,7 @@ function App() {
             <Route path="/sport" element={<Sports />} />
             <Route path="/stream" element={<Streams />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/payment" element={<Payment />} />
             <Route path="/downloadNow" element={<DownloadNow />} />
             <Route
               path="/support"

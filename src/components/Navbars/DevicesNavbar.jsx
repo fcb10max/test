@@ -9,6 +9,7 @@ import {
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -17,6 +18,7 @@ const Container = styled.div`
   background-size: cover;
   background-position: center;
   width: 100vw;
+  height: 550px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,6 +26,10 @@ const Container = styled.div`
   background-color: black;
   padding: 10px 0 20px;
   position: relative;
+  
+  @media (max-width: 1000px) {
+    height: 1000px;
+  }
 `;
 const Wrapper = styled.div`
   max-width: 1440px;
@@ -182,12 +188,14 @@ const DevicesNavbar = ({ title, desc, list, bg, img, btmIcons, btmHide }) => {
                 </Item>
               ))}
             </CheckText>
+            <Link to="/payment" style={{textDecoration:"none"}}>
             <Button>
               <span>Register Now</span>
               <span>
                 <FontAwesomeIcon icon={faArrowRight} />
               </span>
             </Button>
+            </Link>
           </Left>
           <Right>
             <img src={img} alt="" />

@@ -13,6 +13,7 @@ import {
   faTachometerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import MainBlock from "./FeaturesComponents/MainBlock";
 import NavbarNoImg from "./Navbars/NavbarNoImg";
@@ -265,12 +266,14 @@ const Locations = () => {
             the easiest way to secure your browsing, enhance your privacy, and
             unlock the parts of the web you've been missing.
           </Desc>
+          <Link to="/payment" style={{textDecoration:"none"}}>
           <Button>
             <span>Register Now</span>
             <span>
               <FontAwesomeIcon icon={faArrowRight} />
             </span>
           </Button>
+          </Link>
           <BottomText>
             <span>Available for</span>
             <span>

@@ -8,6 +8,7 @@ import {
   faTachometerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import WhyChooseComponent from "./DevicesComponents/WhyChooseComponent";
 import ImgTextBlock from "./HomeComponents/ImgTextBlock";
@@ -123,14 +124,14 @@ const MiddleBlock = styled.div`
   grid-template: 1fr 1fr / 1fr 1fr;
   grid-row-gap: 20px;
   margin: 40px 0;
-  
-  @media (max-width:1000px) {
+
+  @media (max-width: 1000px) {
     grid-template: 1fr / auto;
   }
-  `;
+`;
 const Item = styled.div`
-display: flex;
-min-width: 300px;
+  display: flex;
+  min-width: 300px;
 
   i {
     display: flex;
@@ -185,7 +186,7 @@ const Stream = () => {
             "View video streams from global channels",
             "Enjoy video on desktop and mobile",
             "Watch live without buffering",
-            "Unlimited access ensures you won’t miss the end"
+            "Unlimited access ensures you won’t miss the end",
           ]}
           bg="https://ultravpn.com/assets/hero-events.png"
           img="https://ultravpn.com/assets/stream-events-devices.png"
@@ -208,7 +209,9 @@ const Stream = () => {
             <FontAwesomeIcon icon={faBolt} />
           </Icon>
           <Title>How to Stream Live Events with UltraVPN</Title>
-          <Desc>Watch live awards ceremonies or sports tournaments from any device.</Desc>
+          <Desc>
+            Watch live awards ceremonies or sports tournaments from any device.
+          </Desc>
           <Items>
             <ItemTop>
               <Img>
@@ -228,7 +231,9 @@ const Stream = () => {
                 />
               </Img>
               <h1>Install</h1>
-              <p>Get the right app for your device - we’ve got them all covered</p>
+              <p>
+                Get the right app for your device - we’ve got them all covered
+              </p>
             </ItemTop>
             <ItemTop>
               <Img>
@@ -238,15 +243,20 @@ const Stream = () => {
                 />
               </Img>
               <h1>Connect</h1>
-              <p>Access all the events you’ve been waiting for via our ULTRAFLIX server</p>
+              <p>
+                Access all the events you’ve been waiting for via our ULTRAFLIX
+                server
+              </p>
             </ItemTop>
           </Items>
-          <RegisterButton>
-            <span>Register Now</span>
-            <span>
-              <FontAwesomeIcon icon={faArrowRight} />
-            </span>
-          </RegisterButton>
+          <Link to="/payment" style={{ textDecoration: "none" }}>
+            <RegisterButton>
+              <span>Register Now</span>
+              <span>
+                <FontAwesomeIcon icon={faArrowRight} />
+              </span>
+            </RegisterButton>
+          </Link>
         </StreamBlock>
         <MiddleWrapper>
           <MiddleIcon>

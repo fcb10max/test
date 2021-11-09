@@ -79,6 +79,7 @@ const LoginButton = styled.div`
 
 const TopNavbar = ({ setMenuActive, setDispFixed }) => {
   const onClickHandler = (e) => {
+    setMenuActive(true);
     setDispFixed(true);
   };
 

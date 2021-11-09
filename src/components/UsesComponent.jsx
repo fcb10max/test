@@ -1,5 +1,6 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import ImgTextBlock from "./HomeComponents/ImgTextBlock";
 import NavbarNoImg from "./Navbars/NavbarNoImg";
@@ -57,8 +58,7 @@ const RegisterButton = styled.div`
 `;
 
 const UsesComponent = () => {
-
-  window.scrollTo(0,0);
+  window.scrollTo(0, 0);
 
   return (
     <Container>
@@ -102,13 +102,19 @@ const UsesComponent = () => {
         />
         <BottomContainer>
           <Title>One VPN, All Your Devices</Title>
-          <Desc>Sign up with UltraVPN today for instant, unrestricted access. It's the easiest way to secure your browsing, enhance your privacy, and unlock the whole of the web.</Desc>
-          <RegisterButton>
-            <span>Register Now</span>
-            <span>
-              <FontAwesomeIcon icon={faArrowRight} />
-            </span>
-          </RegisterButton>
+          <Desc>
+            Sign up with UltraVPN today for instant, unrestricted access. It's
+            the easiest way to secure your browsing, enhance your privacy, and
+            unlock the whole of the web.
+          </Desc>
+          <Link to="/payment" style={{ textDecoration: "none" }}>
+            <RegisterButton>
+              <span>Register Now</span>
+              <span>
+                <FontAwesomeIcon icon={faArrowRight} />
+              </span>
+            </RegisterButton>
+          </Link>
         </BottomContainer>
       </Wrapper>
     </Container>

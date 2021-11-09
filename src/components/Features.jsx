@@ -1,4 +1,11 @@
-import { faAndroid, faApple, faAppStoreIos, faFacebook, faTwitter, faWindows } from "@fortawesome/free-brands-svg-icons";
+import {
+  faAndroid,
+  faApple,
+  faAppStoreIos,
+  faFacebook,
+  faTwitter,
+  faWindows,
+} from "@fortawesome/free-brands-svg-icons";
 import {
   faArrowRight,
   faBolt,
@@ -12,6 +19,7 @@ import {
   faTachometerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import MainBlock from "./FeaturesComponents/MainBlock";
 import NavbarNoImg from "./Navbars/NavbarNoImg";
@@ -38,13 +46,13 @@ const BottomBlock = styled.div`
 const Title = styled.h1`
   text-align: center;
   max-width: 80vw;
-  `;
+`;
 const Desc = styled.div`
   width: 50%;
   text-align: center;
   margin: 20px 0;
 
-  @media (max-width:600px) {
+  @media (max-width: 600px) {
     width: 100%;
     max-width: 80vw;
   }
@@ -102,51 +110,51 @@ const Features = () => {
       {
         title: "Connect in Seconds",
         desc: "Reliable video streaming with no bandwidth restrictions.",
-        icon: <FontAwesomeIcon icon={faMousePointer} />
+        icon: <FontAwesomeIcon icon={faMousePointer} />,
       },
       {
         title: "No Bandwidth Caps",
         desc: "A global list of servers to choose from.",
-        icon: <FontAwesomeIcon icon={faSignal} />
+        icon: <FontAwesomeIcon icon={faSignal} />,
       },
       {
         title: "Ultra Fast Speeds",
         desc: "Solid connections from every server.",
-        icon: <FontAwesomeIcon icon={faTachometerAlt} />
+        icon: <FontAwesomeIcon icon={faTachometerAlt} />,
       },
     ],
     1: [
       {
         title: "Military-Grade Encryption",
         desc: "Encryption used by military and financial institutions.",
-        icon: <FontAwesomeIcon icon={faShieldVirus} />
+        icon: <FontAwesomeIcon icon={faShieldVirus} />,
       },
       {
         title: "Secure Firewall",
         desc: "UltraVPN ensures no traffic passes outside the VPN.",
-        icon: <FontAwesomeIcon icon={faLock} />
+        icon: <FontAwesomeIcon icon={faLock} />,
       },
       {
         title: "Malware and Phishing Protection",
         desc: "Built-in protection to keep you safe.",
-        icon: <FontAwesomeIcon icon={faEyeSlash} />
+        icon: <FontAwesomeIcon icon={faEyeSlash} />,
       },
     ],
     2: [
       {
         title: "Unblock Social Media",
         desc: "Get around government or employer blocks.",
-        icon: <FontAwesomeIcon icon={faTwitter} />
+        icon: <FontAwesomeIcon icon={faTwitter} />,
       },
       {
         title: "Watch Sporting Events",
         desc: "Access forbidden sites in your location.",
-        icon: <FontAwesomeIcon icon={faFootballBall} />
+        icon: <FontAwesomeIcon icon={faFootballBall} />,
       },
       {
         title: "Access Online Media",
         desc: "Stream content that's normally unavailable in your country.",
-        icon: <FontAwesomeIcon icon={faDesktop} />
+        icon: <FontAwesomeIcon icon={faDesktop} />,
       },
     ],
   };
@@ -189,19 +197,29 @@ const Features = () => {
             the easiest way to secure your browsing, enhance your privacy, and
             unlock the parts of the web you've been missing.
           </Desc>
-          <Button>
-            <span>Register Now</span>
-            <span>
-              <FontAwesomeIcon icon={faArrowRight} />
-            </span>
-          </Button>
+          <Link to="/payment" style={{ textDecoration: "none" }}>
+            <Button>
+              <span>Register Now</span>
+              <span>
+                <FontAwesomeIcon icon={faArrowRight} />
+              </span>
+            </Button>
+          </Link>
           <BottomText>
             <span>Available for</span>
             <span>
-              <i><FontAwesomeIcon icon={faWindows} /></i>
-              <i><FontAwesomeIcon icon={faAppStoreIos} /></i>
-              <i><FontAwesomeIcon icon={faAndroid} /></i>
-              <i><FontAwesomeIcon icon={faApple} /></i>
+              <i>
+                <FontAwesomeIcon icon={faWindows} />
+              </i>
+              <i>
+                <FontAwesomeIcon icon={faAppStoreIos} />
+              </i>
+              <i>
+                <FontAwesomeIcon icon={faAndroid} />
+              </i>
+              <i>
+                <FontAwesomeIcon icon={faApple} />
+              </i>
             </span>
           </BottomText>
         </BottomBlock>

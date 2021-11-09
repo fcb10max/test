@@ -1,5 +1,6 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -74,12 +75,14 @@ const NavbarNoImg = ({ img, title, desc }) => {
           <BigText>{title}</BigText>
           <SmallText>{desc}</SmallText>
           <BtnContainer>
+            <Link to="/payment" style={{textDecoration:"none"}}>
             <RegisterButton>
               <span>Register Now</span>
               <span>
                 <FontAwesomeIcon icon={faArrowRight} />
               </span>
             </RegisterButton>
+            </Link>
           </BtnContainer>
         </TextContainer>
       </Wrapper>

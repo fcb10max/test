@@ -1,18 +1,9 @@
-import { useState } from "react";
 import GSNContainer from "./HomeComponents/GSNContainer";
 import ImgTextBlock from "./HomeComponents/ImgTextBlock";
 import TopBlock from "./HomeComponents/TopBlock";
 import Navbar from "./Navbars/Navbar";
 
 const Home = () => {
-  // const [pos, setpos] = useState(100);
-
-  // const handleScroll = (e) => {
-  //   const blockArr = document.getElementsByClassName("animate");
-
-  // }
-
-  // window.addEventListener("scroll", handleScroll);
 
   return (
     <>

@@ -6,15 +6,6 @@ const Container = styled.div`
   justify-content: center;
   position: relative;
 `;
-const Bg = styled.div`
-  left: 100%;
-  display: ${(props) => (props.active ? "block" : "none")};
-  position: absolute;
-  background-color: lightgray;
-  width: 100vw;
-  height: 100%;
-  z-index: -1;
-`;
 const Wrapper = styled.div`
   max-width: 1440px;
   width: 80vw;

@@ -54,7 +54,7 @@ const BigMenu = ({ active, setMenuActive, setDispFixed }) => {
     { name: "Features", link: "/features" },
     { name: "Locations", link: "/location" },
     { name: "Pricing", link: "/pricing" },
-    { name: "Support", link: "/#" },
+    { name: "Support", link: "/support" },
     { name: "Log: in", link: "/login" },
   ];
 

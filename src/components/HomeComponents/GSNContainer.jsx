@@ -3,6 +3,7 @@ import {
   faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -115,12 +116,14 @@ const GSNContainer = () => {
             Get started now with the UltraVPN app, and secure your connection
             with a click.
           </Desc>
+          <Link to="/payment" style={{textDecoration:"none"}}>
           <RegisterButton>
             <span>Register Now</span>
             <span>
               <FontAwesomeIcon icon={faArrowRight} />
             </span>
           </RegisterButton>
+          </Link>
         </BottomContainer>
       </Wrapper>
     </Container>

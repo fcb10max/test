@@ -8,6 +8,7 @@ import {
   faTachometerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import WhyChooseComponent from "./DevicesComponents/WhyChooseComponent";
 import ImgTextBlock from "./HomeComponents/ImgTextBlock";
@@ -122,14 +123,14 @@ const MiddleBlock = styled.div`
   grid-template: 1fr 1fr / 1fr 1fr;
   grid-row-gap: 20px;
   margin: 40px 0;
-  
-  @media (max-width:1000px) {
+
+  @media (max-width: 1000px) {
     grid-template: 1fr / auto;
   }
-  `;
+`;
 const Item = styled.div`
-display: flex;
-min-width: 300px;
+  display: flex;
+  min-width: 300px;
 
   i {
     display: flex;
@@ -247,12 +248,14 @@ const Sports = () => {
               <p>Stream the game using our ULTRAFLIX server</p>
             </ItemTop>
           </Items>
-          <RegisterButton>
-            <span>Register Now</span>
-            <span>
-              <FontAwesomeIcon icon={faArrowRight} />
-            </span>
-          </RegisterButton>
+          <Link to="/payment" style={{ textDecoration: "none" }}>
+            <RegisterButton>
+              <span>Register Now</span>
+              <span>
+                <FontAwesomeIcon icon={faArrowRight} />
+              </span>
+            </RegisterButton>
+          </Link>
         </StreamBlock>
         <MiddleWrapper>
           <MiddleIcon>

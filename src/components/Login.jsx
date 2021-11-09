@@ -5,7 +5,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -195,7 +194,7 @@ const Login = () => {
             </span>
           </Button>
           <Links>
-            <a href="">Forgot Password?</a> | <a href="">Create an Account</a>
+            <a href="#">Forgot Password?</a> | <a href="#">Create an Account</a>
           </Links>
         </Top>
         <BottomBlock>
