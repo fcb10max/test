@@ -68,7 +68,7 @@ const BlockDesc = styled.div`
   color: gray;
 `;
 
-const WhyInstall = ({ data, title, icon }) => {
+const WhyInstall = ({ data="", title="", icon="" }) => {
   const whyInstallItemsArr = [
     {
       icon: <FontAwesomeIcon icon={faMousePointer} />,
