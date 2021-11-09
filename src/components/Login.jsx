@@ -20,12 +20,6 @@ const Container = styled.div`
   align-items: center;
   background-color: rgba(0,0,0,0.9);
 `;
-const Logo = styled.div`
-  height: 34px;
-  margin: 34px auto;
-  color: white;
-  cursor: pointer;
-`;
 const MainBlock = styled.div`
   margin: 88px 0;
   max-width: 450px;
@@ -173,9 +167,6 @@ const Login = () => {
 
   return (
     <Container>
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <Logo>Logo</Logo>
-      </Link>
       <MainBlock>
         <Top>
           <Title>Welcome Back!</Title>

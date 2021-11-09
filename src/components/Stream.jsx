@@ -62,6 +62,7 @@ const Items = styled.div`
 `;
 const ItemTop = styled.div`
   display: flex;
+  width: 300px;
   flex-direction: column;
   align-items: center;
 
@@ -148,29 +149,29 @@ const BlockDesc = styled.div`
   width: 80%;
 `;
 
-const Sports = () => {
+const Stream = () => {
   window.scrollTo(0, 0);
 
   const gridObjs = [
     {
       icon: <FontAwesomeIcon icon={faTwitter} />,
-      title: "Access the entire web",
-      desc: "Get around content blocks and geo-restrictions to see the entire web.",
+      title: "Access Social Networks",
+      desc: "See banned websites and make sure you can use social networks on holiday.",
     },
     {
       icon: <FontAwesomeIcon icon={faDesktop} />,
-      title: "Stream Netflix",
-      desc: "Switch locations quickly using the UltraVPN browser add-on.",
+      title: "Stream Live Events and Sports",
+      desc: "Watch the hottest games and awards ceremonies from overseas.",
     },
     {
       icon: <FontAwesomeIcon icon={faTachometerAlt} />,
-      title: "Browse Fast",
-      desc: "Enjoy great speeds from 55 global servers in our network.",
+      title: "Fast and Reliable",
+      desc: "We pride ourselves on the speed of our connection.",
     },
     {
       icon: <FontAwesomeIcon icon={faSignal} />,
-      title: "No Caps - Ever",
-      desc: "We won’t cap or throttle your connection.",
+      title: "Unlimited Access",
+      desc: ".One VPN account gives you unlimited access without time or data caps.",
     },
   ];
 
@@ -178,24 +179,17 @@ const Sports = () => {
     <Container>
       <Wrapper>
         <DevicesNavbar
-          title="Never Miss a Game With UltraVPN"
-          desc="A VPN ensures access to all of the games you can't miss."
+          title="Watch Live Events Anywhere With UltraVPN"
+          desc="A VPN ensures access to all of the live streams you can't miss."
           list={[
             "View video streams from global channels",
             "Enjoy video on desktop and mobile",
-            "Watch the game live, without buffering",
-            "Unlimited access ensures you won’t miss the final score",
+            "Watch live without buffering",
+            "Unlimited access ensures you won’t miss the end"
           ]}
-          bg="https://ultravpn.com/assets/hero-sports.png"
-          img="https://ultravpn.com/assets/stream-sports-devices.png"
-          btmIcons={[
-            "https://ultravpn.com/assets/ultra-vpn.png",
-            "https://ultravpn.com/assets/ultra-vpn-nfl.png",
-            "https://ultravpn.com/assets/ultra-vpn-premeier-league.png",
-            "https://ultravpn.com/assets/ultra-vpn-champions-league.png",
-            "https://ultravpn.com/assets/ultra-vpn-olympics.png",
-            "https://ultravpn.com/assets/ultra-vpn-mlb.png",
-          ]}
+          bg="https://ultravpn.com/assets/hero-events.png"
+          img="https://ultravpn.com/assets/stream-events-devices.png"
+          btmHide={true}
         />
         <Block>
           <Icon>
@@ -203,18 +197,18 @@ const Sports = () => {
           </Icon>
           <Title>Viewing Live, Global Events is Simple with a VPN</Title>
           <ImgTextBlock
-            intro="GET SET UP FOR THE GAME"
-            title="One Click Connects You to 100+ Global Servers"
-            desc="Sports events are often restricted by geographic blocks. Using UltraVPN, you can break through these blocks and view the stream as if you were a local. As a plus, your connection will also be private and secure, thanks to our military-grade encryption."
-            image="https://ultravpn.com/assets/ultra-vpn-sport-stream.png"
+            intro="GET SET UP"
+            title="One Click Connects You to Our Streaming Server"
+            desc="No need to Google for ways to watch live events online. Use UltraVPN to watch overseas streams via speedy servers. Your VPN can unlock event streams on multiple devices, including your connected TV, your smartphone, or your home computer."
+            image="https://ultravpn.com/assets/ultra-vpn-events-stream.png"
           />
         </Block>
         <StreamBlock>
           <Icon>
             <FontAwesomeIcon icon={faBolt} />
           </Icon>
-          <Title>Access Your Sports Stream Live</Title>
-          <Desc>Watch your favorite sports live from any device.</Desc>
+          <Title>How to Stream Live Events with UltraVPN</Title>
+          <Desc>Watch live awards ceremonies or sports tournaments from any device.</Desc>
           <Items>
             <ItemTop>
               <Img>
@@ -224,7 +218,7 @@ const Sports = () => {
                 />
               </Img>
               <h1>Sign Up</h1>
-              <p>Get a VPN account with UltraVPN</p>
+              <p>Join and activate your UltraVPN account</p>
             </ItemTop>
             <ItemTop>
               <Img>
@@ -234,7 +228,7 @@ const Sports = () => {
                 />
               </Img>
               <h1>Install</h1>
-              <p>Grab the app for the device you want to use</p>
+              <p>Get the right app for your device - we’ve got them all covered</p>
             </ItemTop>
             <ItemTop>
               <Img>
@@ -244,7 +238,7 @@ const Sports = () => {
                 />
               </Img>
               <h1>Connect</h1>
-              <p>Stream the game using our ULTRAFLIX server</p>
+              <p>Access all the events you’ve been waiting for via our ULTRAFLIX server</p>
             </ItemTop>
           </Items>
           <RegisterButton>
@@ -258,7 +252,7 @@ const Sports = () => {
           <MiddleIcon>
             <FontAwesomeIcon icon={faMousePointer} />
           </MiddleIcon>
-          <MiddleTitle>No Limits, No Caps, No Blocks</MiddleTitle>
+          <MiddleTitle>Access Any Site, Anywhere, at Any Time</MiddleTitle>
           <MiddleBlock>
             {gridObjs.map((item) => (
               <Item>
@@ -277,4 +271,4 @@ const Sports = () => {
   );
 };
 
-export default Sports;
+export default Stream;

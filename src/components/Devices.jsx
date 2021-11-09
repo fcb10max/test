@@ -2,6 +2,7 @@ import styled from "styled-components"
 import GetBlock from "./DevicesComponents/GetBlock";
 import SetupInstructions from "./DevicesComponents/SetupInstructions";
 import WhyChooseComponent from "./DevicesComponents/WhyChooseComponent";
+import WhyInstall from "./DevicesComponents/WhyInstall";
 import DevicesNavbar from "./Navbars/DevicesNavbar";
 
 const Container = styled.div`
@@ -31,6 +32,7 @@ const Devices = ({device}) => {
           item2={device.lastBlock.items.item2}
           img={device.lastBlock.img}
         />
+        <WhyInstall/>
         <WhyChooseComponent/>
       </Wrapper>
     </Container>

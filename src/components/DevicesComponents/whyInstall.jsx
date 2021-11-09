@@ -6,6 +6,7 @@ import {
   faSignal,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styled from "styled-components";
 
 const Container = styled.div`
   width: 100vw;
@@ -21,7 +22,7 @@ const Wrapper = styled.div`
   align-items: center;
   text-align: center;
 `;
-const WhyInstall = styled.div``;
+const WhyInstallBlock = styled.div``;
 const Icon = styled.h1``;
 const Title = styled.h1``;
 const Block = styled.div`
@@ -29,17 +30,29 @@ const Block = styled.div`
   display: grid;
   grid-template: 1fr 1fr / 1fr 1fr;
   margin: 40px auto;
+
+  @media (max-width: 800px) {
+    grid-template: 1fr /auto;
+  }
 `;
 const WhyInstallItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 40px 0;
+  margin: 40px;
+
+  @media (max-width: 800px) {
+    width: 80vw;
+  }
 `;
 const BlockIcon = styled.h2`
   margin-right: 15px;
   display: flex;
   height: 50px;
+
+  @media (max-width: 800px) {
+    margin-right: 40px;
+  }
 `;
 const BlockText = styled.div`
   display: flex;
@@ -55,7 +68,7 @@ const BlockDesc = styled.div`
   color: gray;
 `;
 
-const whyInstall = () => {
+const WhyInstall = ({ data, title, icon }) => {
   const whyInstallItemsArr = [
     {
       icon: <FontAwesomeIcon icon={faMousePointer} />,
@@ -79,16 +92,18 @@ const whyInstall = () => {
     },
   ];
 
+  const arr = data ? data : whyInstallItemsArr;
+
   return (
     <Container>
       <Wrapper>
-        <WhyInstall>
+        <WhyInstallBlock>
           <Icon>
-            <FontAwesomeIcon icon={faBolt} />
+            {icon ? icon : <FontAwesomeIcon icon={faBolt} />}
           </Icon>
-          <Title>Why Install UltraVPN?</Title>
+          <Title>{title ? title : "Why Install UltraVPN?"}</Title>
           <Block>
-            {whyInstallItemsArr.map((item) => (
+            {arr.map((item) => (
               <WhyInstallItem>
                 <BlockIcon>{item.icon}</BlockIcon>
                 <BlockText>
@@ -98,10 +113,10 @@ const whyInstall = () => {
               </WhyInstallItem>
             ))}
           </Block>
-        </WhyInstall>
+        </WhyInstallBlock>
       </Wrapper>
     </Container>
   );
 };
 
-export default whyInstall;
+export default WhyInstall;

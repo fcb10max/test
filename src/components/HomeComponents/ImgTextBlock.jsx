@@ -25,6 +25,7 @@ const Wrapper = styled.div`
 
   @media (max-width: 900px) {
     flex-direction: column;
+    padding: 20px;
   }
 
 `;
@@ -59,6 +60,7 @@ const Desc = styled.div`
   @media (max-width: 800px) {
     width: 100%;
     max-width: 80vw;
+    margin: 20px 0;
   }
 `;
 const Img = styled.div`

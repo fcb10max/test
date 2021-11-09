@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 const Block = styled.div`
   flex: 1;
   margin: 20px;
-  min-width: 200px;
+  min-width: 150px;
 `;
 const Logo = styled.div``;
 const Copyright = styled.div``;
@@ -38,7 +38,7 @@ const Item = styled.div`
   }
 `;
 
-const Footer = ({ devices, setDevice }) => {
+const Footer = ({ devices, setDevice, setMainActive }) => {
   window.scrollTo(0, 0);
 
   return (
@@ -93,17 +93,23 @@ const Footer = ({ devices, setDevice }) => {
             <Link to="/sport" style={{ textDecoration: "none" }}>
               <Item>Stream Sports</Item>
             </Link>
-            <Item>Stream Live Events</Item>
+            <Link to="/stream" style={{ textDecoration: "none" }}>
+              <Item>Stream Live Events</Item>
+            </Link>
             <Link to="/login" style={{ textDecoration: "none" }}>
               <Item>Log In</Item>
             </Link>
-            <Item>Download Now</Item>
+            <Link to="/downloadNow" style={{ textDecoration: "none" }}>
+              <Item>Download Now</Item>
+            </Link>
           </Content>
         </Block>
         <Block>
           <Title>Support</Title>
           <Content>
-            <Item>Knowledge Base</Item>
+            <Link to="/support" style={{ textDecoration: "none" }} onClick={() => setMainActive(false)}>
+              <Item>Knowledge Base</Item>
+            </Link>
             <Item>Contact Us</Item>
           </Content>
         </Block>

@@ -34,9 +34,8 @@ const Item = styled.div`
 `;
 const Img = styled.div`
   img {
-    min-width: 300px;
-    width: 20vw;
-  }
+    width: 300px;
+}
 `;
 const Text = styled.h2``;
 const Desc = styled.div`
