@@ -30,7 +30,7 @@ const Discount = styled.div`
   position: absolute;
   transform: rotate(45deg);
   right: -30px;
-  top: 25px;
+  top: 20px;
   background-color: ${(props) => props.diff ? "rgba(255,0,0,0.7)" : "#ff8600"};
   font-weight: 700;
   color: white;
