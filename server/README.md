@@ -1,6 +1,6 @@
 required active mysql database
 
-required .env file with following variables:
+required .env file located in root folder with following variables:
 
 PORT - server port: number
 DB_HOST - database server host: string
