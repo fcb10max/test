@@ -7,7 +7,8 @@ const knex = require("./connect");
  * @param {string} changeColNewValue
  */
 const changeRow = async (idCol, idColVal, changeColId, changeColNewValue) => {
-  return await knex("users")
+  const db = await knex
+  return await db("users")
     .where(idCol, idColVal)
     .update({ [changeColId]: changeColNewValue });
 };

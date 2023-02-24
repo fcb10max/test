@@ -5,7 +5,8 @@ const knex = require("./connect");
  */
 const addNewUser = async ({ name, email, tel, password, refreshToken }) => {
   const reshapedTel = parseInt(String(tel).slice(-8));
-  return await knex("users").insert(
+  const db = await knex;
+  return await db("users").insert(
     { email, name, tel: reshapedTel, password, refreshToken },
     "user_id"
   );

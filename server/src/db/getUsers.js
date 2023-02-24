@@ -15,7 +15,8 @@ let User;
  */
 const getUsers = async ({ name, email, tel, id }) => {
   const reshapedTel = parseInt(String(tel ?? -1).slice(-8));
-  return await knex("users")
+  const db = await knex;
+  return await db("users")
     .select("*")
     .where("email", email ?? "")
     .orWhere("name", name ?? "")
