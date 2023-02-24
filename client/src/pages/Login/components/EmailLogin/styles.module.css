@@ -1,0 +1,137 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.serverErrorMsg {
+  padding: 16px 24px;
+  position: fixed;
+  top: -50%;
+  background-color: bisque;
+  border: 1px solid crimson;
+  border-radius: 8px;
+  color: crimson;
+  font-size: 18px;
+  transition: top 0.3s linear;
+}
+.serverErrorMsg.show {
+  top: 0;
+}
+
+.formField {
+  position: relative;
+}
+
+.formField_input {
+  width: 100%;
+  padding: 8px 16px;
+  margin: 16px 0;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 2px solid lightgray;
+  transition: border-color 0.3s linear;
+  z-index: 1;
+}
+
+.formField_input.invalid {
+  border-color: crimson;
+  animation: nodding 0.5s ease-in;
+}
+
+.formField > p {
+  color: crimson;
+  margin: 0 0 12px;
+  font-size: 12px;
+  max-width: 250px;
+}
+
+.formField_input:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.formField_label {
+  position: absolute;
+  left: 16px;
+  top: 26px;
+  font-size: 18px;
+  transition: font-size 0.3s linear, top 0.3s linear,
+    background-color 0.3s linear;
+  z-index: 0;
+  user-select: none;
+}
+
+.formField_input:not([value=""]) ~ label,
+.formField_input:focus ~ label {
+  top: 8px;
+  font-size: 12px;
+  background-color: #fff;
+  padding: 0 4px;
+}
+
+.showHidePassword {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 16px;
+}
+
+.submit {
+  width: 100%;
+  font-size: 18px;
+  padding: 12px 16px;
+  margin: 16px 0;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  background-color: darkcyan;
+  transition: background-color 0.3s linear;
+  cursor: pointer;
+}
+
+.submit:hover,
+.submit:focus {
+  background-color: rgb(3, 102, 102);
+}
+
+@keyframes nodding {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-5%);
+  }
+  20% {
+    transform: translateX(5%);
+  }
+  30% {
+    transform: translateX(-5%);
+  }
+  40% {
+    transform: translateX(5%);
+  }
+  50% {
+    transform: translateX(-5%);
+  }
+  60% {
+    transform: translateX(5%);
+  }
+  70% {
+    transform: translateX(-5%);
+  }
+  80% {
+    transform: translateX(5%);
+  }
+  90% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(5%);
+  }
+}
